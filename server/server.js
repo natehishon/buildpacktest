@@ -7,6 +7,8 @@ const MongoStore = require('connect-mongo')(session)
 const passport = require('./passport');
 const app = express()
 const PORT = process.env.PORT  || 5000;
+const cors = require('cors');
+
 
 
 
@@ -17,6 +19,7 @@ const router = express.Router();
 
 // Middleware
 app.use(morgan('dev'))
+app.use(cors());
 app.use(
     bodyParser.urlencoded({
         extended: false
